@@ -9,5 +9,7 @@
       "binding": "MBTILES_BUCKET",
       "bucket_name": "bristol-bay-sandbars-mbtiles"
     }
-  ]
+  ],
+
+  "observability": { "enabled": true }
 }
