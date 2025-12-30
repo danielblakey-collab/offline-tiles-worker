@@ -1,4 +1,7 @@
-# Logs
+node_modules/
+.DS_Store
+.env
+dist/# Logs
 
 logs
 _.log
