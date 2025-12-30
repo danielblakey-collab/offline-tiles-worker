@@ -11,5 +11,12 @@
     }
   ],
 
+  "migrations": [
+    {
+      "tag": "v2",
+      "deleted_classes": ["MyDurableObject"]
+    }
+  ],
+
   "observability": { "enabled": true }
 }
