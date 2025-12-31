@@ -12,9 +12,7 @@ export default {
     }
 
     const obj = await env.MBTILES_BUCKET.get(key);
-    if (!obj) {
-      return new Response(`File not found: ${key}`, { status: 404 });
-    }
+    if (!obj) return new Response(`File not found: ${key}`, { status: 404 });
 
     const headers = new Headers();
     headers.set("Content-Type", "application/octet-stream");
@@ -24,10 +22,7 @@ export default {
     if (obj.size != null) headers.set("Content-Length", String(obj.size));
     if (obj.etag) headers.set("ETag", obj.etag);
 
-    // HEAD should return headers only (no body)
-    if (request.method === "HEAD") {
-      return new Response(null, { status: 200, headers });
-    }
+    if (request.method === "HEAD") return new Response(null, { status: 200, headers });
 
     return new Response(obj.body, { status: 200, headers });
   },
